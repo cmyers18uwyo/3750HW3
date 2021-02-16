@@ -11,10 +11,10 @@ CC=gcc -I .
 CFLAGS=-ggdb -Wall
 RM=/bin/rm -f
 
-OBJS = prompt.o compute.o display.o
+OBJS = approxe.c prompt.o compute.o display.o
 .PHONY : tidy clean
 approxe : $(OBJS)
-	$(CC) $(CFLAGS) approxe.c $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS)
 prompt.o : prompt.c prompt.h
 	$(CC) $(CFLAGS) -c prompt.c
 compute.o : compute.c compute.h
@@ -23,5 +23,5 @@ display.o : display.c display.h
 	$(CC) $(CFLAGS) -c display.c
 tidy :
 	$(RM) *.o
-clean :
-	$(RM) a.out *.o
+clean : tidy
+	$(RM) a.out
