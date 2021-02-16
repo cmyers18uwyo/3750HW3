@@ -7,8 +7,8 @@
 #
 #This file will compile the supplied files for HW3
 ##################################
-CC=gcc -I .
-CFLAGS=-ggdb -Wall
+CC=gcc
+CFLAGS=-ggdb -Wall -I .
 RM=/bin/rm -f
 
 OBJS = approxe.c prompt.o compute.o display.o
