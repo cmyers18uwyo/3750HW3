@@ -14,7 +14,7 @@ RM=/bin/rm -f
 OBJS = approxe.c prompt.o compute.o display.o
 .PHONY : tidy clean
 approxe : $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS)
+	$(CC) $(CFLAGS) -o approxe $(OBJS)
 prompt.o : prompt.c prompt.h
 	$(CC) $(CFLAGS) -c prompt.c
 compute.o : compute.c compute.h
@@ -24,4 +24,4 @@ display.o : display.c display.h
 tidy :
 	$(RM) *.o
 clean : tidy
-	$(RM) a.out
+	$(RM) approxe
